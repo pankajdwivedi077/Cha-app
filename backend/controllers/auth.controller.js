@@ -31,16 +31,23 @@ const hashedPassword = await bcrypt.hash(password, salt);
     profilePic: gender === "male" ? boyProfilePic : girlProfilePic
   })
 
-  await newUser.save();
+  if (newUser){
 
-  res.status(201).json({
-    _id:newUser._id,
-    fullName:newUser.fullName,
-    username:newUser.username,
-    password:newUser.password,
-    gender:newUser.gender,
-    profilePic:newUser.profilePic
-  })
+    // Generate jwt token
+
+    await newUser.save();
+
+    res.status(201).json({
+      _id:newUser._id,
+      fullName:newUser.fullName,
+      username:newUser.username,
+      password:newUser.password,
+      gender:newUser.gender,
+      profilePic:newUser.profilePic
+    })
+  }else{
+    res.status(400).json({error: "Invalid user data"});
+  }
 
   } catch(error){
     console.log("error in sign up controller",error.message)
