@@ -9,6 +9,7 @@ const useLogout = () => {
  const { setAuthUser } = useAuthContext();
 
  const logout = async (e) =>{
+  setLoading(true);
     try{
       const res = await fetch("api/auth/logout", {
         method: "POST",
