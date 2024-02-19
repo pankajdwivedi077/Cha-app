@@ -3,11 +3,13 @@ import useConversation from '../../zustand/useConversation';
 import useGetMessages from "../../hooks/useGetMessages"; // Import useGetMessages
 import Message from "./Message";
 import { useEffect, useRef } from 'react';
+import useListenMessages from '../../hooks/useListenMessages';
 
 const Messages = () => {
   const { loading, messages } = useGetMessages(); // Use useGetMessages hook to fetch messages
   // const { authUser } = useAuthContext(); // Move useAuthContext inside Messages component
   // const { selectedConverstion } = useConversation();
+  useListenMessages();
    console.log(messages)
   const lastMessageRef = useRef();
   useEffect(() => {
