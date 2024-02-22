@@ -23,11 +23,7 @@ To get started with Chat-app, follow these steps:
 
 3. Online Status: Users can see who is online and active in the chat.
 
-4. User Profiles: Users can view and update their profiles, including profile pictures.
-
-5. Private Messaging: Users can initiate private conversations with other users.
-
-6. Notifications: Receive notifications for new messages and other activities.
+4. Notifications: Receive notifications for new messages.
 
 # Technologies Used
  Frontend:
